@@ -8,6 +8,7 @@ public class Homework {
         taskOne();
         taskTwo();
         taskThree();
+        taskFour();
     }
 
     static void taskOne() {
@@ -69,6 +70,13 @@ public class Homework {
                 break;
             default:
                 System.out.println("Неизвестный день недели");
+        }
+    }
+
+    static void taskFour() {
+        for (int i = 0; i < 100; i += 5) {
+            if (i == 0) continue;
+            System.out.print(i + " ");
         }
     }
 }

@@ -5,7 +5,14 @@ import java.util.Scanner;
 
 public class HomeworkArrays {
     public static void main(String[] args) {
+        taskOneArrays();
         taskTwoArray();
+    }
+
+    static void taskOneArrays() {
+        String[] names = new String[]{"Nikita", "Ivan", "Igor", "Alexei"};
+        Arrays.sort(names);
+        System.out.println("Отсортированный массив имен - " + Arrays.toString(names));
     }
 
     static void taskTwoArray() {
@@ -14,17 +21,17 @@ public class HomeworkArrays {
         int evenNumbers = 0;
         while (flag) {
             System.out.print("Введите размер массива для 2ого задания - ");
-            int n = in.nextInt();
-            if (n <= 5) {
+            int size = in.nextInt();
+            if (size <= 5) {
                 System.out.println("число должно быть больше 5, повторите ввод");
-            } else if (n > 10) {
+            } else if (size > 10) {
                 System.out.println("число должно быть не больше 10, повторите ввод");
             } else {
-                int[] array = new int[n];
+                int[] array = new int[size];
                 for (int i = 0; i < array.length; i++) {
                     array[i] = ((int) (Math.random() * 100));
                     if (array[i] % 2 == 0) {
-                        evenNumbers += 1;
+                        evenNumbers++;
                     }
                 }
                 flag = false;

@@ -6,11 +6,13 @@ import java.util.Scanner;
 public class HomeworkNArrays {
     public static void main(String[] args) {
         taskOneNArrays();
+        taskTwoNArrays();
     }
 
     static void taskOneNArrays() {
-        int size1, size2;
         Scanner in = new Scanner(System.in);
+        int size1, size2;
+        System.out.println("Задание 1");
         System.out.print("Число строк: ");
         size1 = in.nextInt();
         System.out.print("Число столбцов: ");
@@ -30,5 +32,61 @@ public class HomeworkNArrays {
             System.out.println("");
         }
         System.out.println("Одномерный массив из двумерного: " + Arrays.toString(oneArray));
+    }
+
+    static void taskTwoNArrays() {
+        Scanner in = new Scanner(System.in);
+        int size1, size2, size3;
+        System.out.println("Задание 2");
+        System.out.print("Введите первую размерность трехмерного массива - ");
+        size1 = in.nextInt();
+        System.out.print("Введите вторую размерность трехмерного массива - ");
+        size2 = in.nextInt();
+        System.out.print("Введите третью размерность трехмерного массива - ");
+        size3 = in.nextInt();
+        int[][][] threeArray = new int[size1][size2][size3];
+        String[][][] strThreeArray = new String[size1][size2][size3];
+
+        for (int i = 0; i < threeArray.length; i++) {
+            for (int j = 0; j < threeArray[i].length; j++) {
+                for (int k = 0; k < threeArray[i][j].length; k++) {
+                    threeArray[i][j][k] = ((int) (Math.random() * 10 + 1));
+                    switch (threeArray[i][j][k]) {
+                        case 1:
+                            strThreeArray[i][j][k] = "one";
+                            break;
+                        case 2:
+                            strThreeArray[i][j][k] = "two";
+                            break;
+                        case 3:
+                            strThreeArray[i][j][k] = "three";
+                            break;
+                        case 4:
+                            strThreeArray[i][j][k] = "four";
+                            break;
+                        case 5:
+                            strThreeArray[i][j][k] = "five";
+                            break;
+                        case 6:
+                            strThreeArray[i][j][k] = "six";
+                            break;
+                        case 7:
+                            strThreeArray[i][j][k] = "seven";
+                            break;
+                        case 8:
+                            strThreeArray[i][j][k] = "eight";
+                            break;
+                        case 9:
+                            strThreeArray[i][j][k] = "nine";
+                            break;
+                        case 10:
+                            strThreeArray[i][j][k] = "ten";
+                            break;
+                    }
+                }
+            }
+        }
+        System.out.println("Трехмерный массив из чисел " + "\n" + Arrays.deepToString(threeArray));
+        System.out.println("Трехмерный массив из слов " + "\n" + Arrays.deepToString(strThreeArray));
     }
 }

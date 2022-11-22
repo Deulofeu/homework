@@ -1,4 +1,4 @@
-package com.example.homework3;
+package com.example.homework;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class HomeworkArrays {
     }
 
     static void taskOneArrays() {
-        String[] names = new String[]{"Nikita", "Ivan", "Igor", "Alexei"};
+        String[] names = new String[]{"Masha", "Ivan", "Igor", "Alexei"};
         Arrays.sort(names);
         System.out.println("Отсортированный массив имен - " + Arrays.toString(names));
     }

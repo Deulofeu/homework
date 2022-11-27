@@ -1,9 +1,8 @@
 package com.example.homework;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class mainPhone {
+public class MainPhone {
 
     public static void main(String[] args) {
         SimCard[] simCards = new SimCard[(int) (Math.random() * 10 + 1)];

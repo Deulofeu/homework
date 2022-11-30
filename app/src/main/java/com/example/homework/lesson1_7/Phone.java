@@ -1,4 +1,4 @@
-package com.example.homework;
+package com.example.homework.lesson1_7;
 
 public class Phone {
     private SimCard sim;

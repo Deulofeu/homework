@@ -1,18 +1,18 @@
-package com.example.homework;
+package com.example.homework.lesson1_7;
 
-public final class LifeSimCard extends SimCard {
-    public LifeSimCard(int balance, String number) {
-        super(balance, "44" + number);
+public final class MtsSimCard extends SimCard {
+    public MtsSimCard(int balance, String number) {
+        super(balance, "29" + number);
     }
 
     @Override
     public String getOperatorName() {
-        return "Life";
+        return "Mts";
     }
 
     @Override
     public void makeCall(String number) {
-        int priceMakeCall = number.startsWith("44") ? 1 : 3;
+        int priceMakeCall = number.startsWith("29") ? 1 : 3;
         if (getBalance() >= priceMakeCall) {
             setBalance(getBalance() - priceMakeCall);
             System.out.println("Звоню на номер: " + number);
@@ -23,7 +23,7 @@ public final class LifeSimCard extends SimCard {
 
     @Override
     public void receiveCall(String number) {
-        if (number.startsWith("44")) {
+        if (number.startsWith("29")) {
             System.out.println("Принимаю звонок с номера: " + number);
         } else {
             setBalance(getBalance() - 1);

@@ -12,12 +12,12 @@ public class Test {
 
     public static String inputDocument() {
         Scanner in = new Scanner(System.in);
-        boolean flag = true;
+        boolean flag = false;
         String document = null;
-        while (flag != false) {
+        while (!flag) {
             System.out.println("Введите номер документа в формате  xxxx-yyy-xxxx-yyy-xyxy, где x — это число, а y — это буква.");
             document = in.nextLine();
-            flag = !document.matches(REGEX_DOCUMENT);
+            flag = document.matches(REGEX_DOCUMENT);
         }
         return document;
     }

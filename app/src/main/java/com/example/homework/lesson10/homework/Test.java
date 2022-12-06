@@ -7,22 +7,26 @@ public class Test {
 
     public static void main(String[] args) {
         String document = inputDocument();
+        documentMethods(document);
+    }
+
+    public static String inputDocument() {
+        Scanner in = new Scanner(System.in);
+        boolean flag = true;
+        String document = null;
+        while (flag != false) {
+            System.out.println("Введите номер документа в формате  xxxx-yyy-xxxx-yyy-xyxy, где x — это число, а y — это буква.");
+            document = in.nextLine();
+            flag = !document.matches(REGEX_DOCUMENT);
+        }
+        return document;
+    }
+
+    public static void documentMethods(String document) {
         Document.printFirstTwoBlocksNumbers(document);
         Document.printReplaceDocument(document);
         Document.printLetters(document);
         Document.checkSubsequenceAbc(document);
         Document.checkEndSubsequence1a2b(document);
-    }
-
-    public static String inputDocument() {
-        boolean flag = false;
-        String document = null;
-        while (flag == false) {
-            System.out.println("Введите номер документа в формате  xxxx-yyy-xxxx-yyy-xyxy, где x — это число, а y — это буква.");
-            Scanner in = new Scanner(System.in);
-            document = in.nextLine();
-            flag = document.matches(REGEX_DOCUMENT);
-        }
-        return document;
     }
 }

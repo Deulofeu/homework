@@ -6,17 +6,12 @@ public class User {
     private String userName;
     private ArrayDeque<String> messages = new ArrayDeque<>();
 
-
     User(String userName) {
         this.userName = userName;
     }
 
     public String getUserName() {
         return userName;
-    }
-
-    public ArrayDeque<String> getMessages() {
-        return messages;
     }
 
     public void writeMessage(String someText) {

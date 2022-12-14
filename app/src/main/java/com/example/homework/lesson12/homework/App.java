@@ -23,8 +23,8 @@ public class App {
     }
 
     private static void printInfoPet(HashMap<String, Pet> pet) {
-        for (Pet pets : pet.values()) {
-            System.out.println(pets.toString());
+        for (Pet animal : pet.values()) {
+            System.out.println(animal.toString());
         }
     }
 
@@ -32,7 +32,7 @@ public class App {
         System.out.println("Введите имя животного, которого нужно удалить");
         while (true) {
             String needDeletePet = in.nextLine();
-            if (pet.containsKey(needDeletePet) != true) {
+            if (!pet.containsKey(needDeletePet)) {
                 System.out.println("Ошибка. Повторите ввод");
             } else {
                 pet.remove(needDeletePet);

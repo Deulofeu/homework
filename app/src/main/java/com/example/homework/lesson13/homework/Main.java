@@ -5,16 +5,16 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Main {
-    private static Scanner in = new Scanner(System.in);
-    private static ArrayList<Integer> arrayList = new ArrayList<>();
-
     public static void main(String[] args) {
-        ArrayList<Integer> randomArrayOfNumbers = initialize();
-        System.out.print("все четные элементы в диапазоне от 7 до 17:");
+        ArrayList<Integer> randomArrayOfNumbers = initializeArrayList();
+        System.out.print("все четные элементы в диапазоне от 7 до 17: ");
         ArrayList<Integer> listOfNumbers = (ArrayList<Integer>) randomArrayOfNumbers.stream()
                 .distinct()
-                .filter(number -> number >= 7 && number <= 17 && number % 2 == 0)
-                .peek(number -> System.out.print(number + " "))
+                .peek(number -> {
+                    if (number % 2 == 0 && number < 17 && number > 7) {
+                        System.out.print(number + " ");
+                    }
+                })
                 .map(number -> number * 2)
                 .filter(number -> number > 10)
                 .collect(Collectors.toList());
@@ -23,9 +23,10 @@ public class Main {
         System.out.println("Среднее арифметическое всех элементов в стриме: " + listOfNumbers.stream().collect(Collectors.averagingInt(number -> number)));
     }
 
-
-    private static ArrayList<Integer> initialize() {
+    private static ArrayList<Integer> initializeArrayList() {
         System.out.print("Введите размер ArrayList: ");
+        Scanner in = new Scanner(System.in);
+        ArrayList<Integer> arrayList = new ArrayList<>();
         while (true) {
             try {
                 int size = Integer.parseInt(in.nextLine());

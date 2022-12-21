@@ -7,14 +7,15 @@ public class CallCenter {
 
     public static void main(String[] args) {
         ArrayList<IncomingCall> listOfCalls = new ArrayList<>();
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Поговорить"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Заказать такси"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Заказать пиццу"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Позвонить в банк"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Записаться на стрижку"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Заказать суши"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Купить что-нибудь"));
-        listOfCalls.add(new IncomingCall((int) (Math.random() * 999), "Поговорить о погоде"));
+        listOfCalls.add(new IncomingCall(randomId(), "Поговорить"));
+        listOfCalls.add(new IncomingCall(randomId(), "Заказать такси"));
+        listOfCalls.add(new IncomingCall(randomId(), "Заказать пиццу"));
+        listOfCalls.add(new IncomingCall(randomId(), "Позвонить в банк"));
+        listOfCalls.add(new IncomingCall(randomId(), "Записаться на стрижку"));
+        listOfCalls.add(new IncomingCall(randomId(), "Заказать суши"));
+        listOfCalls.add(new IncomingCall(randomId(), "Купить что-нибудь"));
+        listOfCalls.add(new IncomingCall(randomId(), "Поговорить о погоде"));
+
         Runnable myRunnable = () -> {
             for (int i = 0; i < listOfCalls.size(); i++) {
                 synchronized (listOfCalls) {
@@ -43,5 +44,9 @@ public class CallCenter {
         myFirstThread.start();
         mySecondThread.start();
         myThirdThread.start();
+    }
+
+    public static int randomId() {
+        return (int) (Math.random() * 999);
     }
 }
